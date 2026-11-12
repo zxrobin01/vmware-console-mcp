@@ -1,0 +1,31 @@
+{
+  "name": "vmware-console-mcp",
+  "version": "0.2.1",
+  "description": "MCP server for VMware Player/Workstation and ESXi/vCenter: lifecycle, files, guest ops (vmrun/govc) and console screen/keyboard/mouse (VNC).",
+  "main": "src/server.js",
+  "bin": {
+    "vmware-console-mcp": "src/server.js"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test tests/unit.test.js",
+    "probe": "node tests/probe.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "private": true,
+  "author": "vm-console-mcp contributors",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "vmware",
+    "esxi",
+    "vsphere",
+    "vnc",
+    "vmrun",
+    "govc",
+    "automation"
+  ]
+}

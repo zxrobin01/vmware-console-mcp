@@ -1,0 +1,25 @@
+Third-party notices for vmware-console-mcp
+
+1. govmomi / govc (Apache License 2.0)
+   The ESXi/vCenter backend shells out to govc, a separate executable from
+   the govmomi project (https://github.com/vmware/govmomi). govc is NOT
+   vendored in this repository: scripts/fetch-govc.ps1 / fetch-govc.sh
+   download it from the official release page at setup time, so its license
+   and NOTICE files travel with the downloaded distribution.
+   The USB HID key-code table in src/tools-esxi.js was adapted from govc
+   cli/vm/keystrokes.go (Apache-2.0). Any modifications to that table are
+   ours; the original project remains the source of the mapping.
+
+2. X11 keysyms
+   src/keysym.js maps key names to X11 keysyms. The numeric values are
+   protocol constants published in the X Window System headers
+   (X11/keysymdef.h, X11/XKBlib.h). No X11 source code is included.
+
+3. VMware
+   "VMware", "ESXi", "vCenter", "Workstation", "Player", "vSphere" and
+   "VMware Tools" are trademarks or registered trademarks of Broadcom Inc.
+   and/or its subsidiaries. This project is an independent, unofficial
+   automation project. It is not affiliated with, endorsed by, or supported
+   by Broadcom or VMware. It does not redistribute VMware binaries: it drives
+   the vmrun.exe and govc executables that the user installs/downloads
+   separately.

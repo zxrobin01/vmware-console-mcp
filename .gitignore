@@ -1,0 +1,31 @@
+# deps / build output
+node_modules/
+tmp/
+*.log
+
+# local configuration and secrets (never commit)
+config/esxi-hosts.json
+config/esxi-hosts.json.tmp
+config/esxi-hosts.json.*
+config/*.bak
+.env
+.env.*
+
+# downloaded binaries (use scripts/fetch-govc.*)
+tools/*
+!tools/.gitkeep
+
+# test-generated screenshots (may include real machines)
+demo/esxi-*.png
+demo/console-*.png
+
+# private / internal material (not for publication)
+demo/private/
+research/
+REPORT-vm-mcp-survey.md
+
+# editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

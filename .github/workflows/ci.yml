@@ -1,0 +1,34 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  unit:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: [20, 22]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Syntax check
+        run: |
+          node --check src/server.js
+          node --check src/tools.js
+          node --check src/tools-esxi.js
+          node --check src/esxi.js
+          node --check src/rfb.js
+          node --check src/console.js
+          node --check src/vmrun.js
+          node --check src/vmx.js
+          node --check src/png.js
+          node --check src/des.js
+          node --check src/keysym.js
+      - name: Unit tests
+        run: node --test tests/unit.test.js

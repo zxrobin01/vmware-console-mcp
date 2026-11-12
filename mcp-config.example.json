@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "vmware": {
+      "command": "node",
+      "args": [
+        "<repo>/src/server.js"
+      ],
+      "env": {
+        "VMWARE_GUEST_USER": "<guest-user>",
+        "VMWARE_GUEST_PASSWORD": "<guest-password>",
+        "ESXI_GUEST_USER": "<guest-user>",
+        "ESXI_GUEST_PASSWORD": "<guest-password>",
+        "GOVC_PATH": "<repo>/tools/govc.exe",
+        "VMWARE_MCP_DEBUG": "0"
+      }
+    }
+  }
+}
